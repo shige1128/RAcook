@@ -1,0 +1,23 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'recipes/index' %>
+<% end %>
+
+<%= render "shared/header"%>
+  <div class="main">
+    <div class="mein-content">
+      <div class="todays-menu">
+        今日はこれを食っとけ
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="best-menu">
+        <div class="best-title">人気のメニュー</div>
+        <ul class="best-ranking">
+          <li>1.</li>
+          <li>2.</li>
+          <li>3.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/footer" %>

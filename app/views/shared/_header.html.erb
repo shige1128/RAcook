@@ -1,0 +1,33 @@
+<header class="site-header">
+  <div class="top-header">
+    <div class="top-logo">
+      <%= link_to image_tag("racook-logo.PNG", class:"racook-logo"), "/" %>
+    </div>
+    <form class="search-form">
+      <input type="seach" placeholder="検索…料理名or材料名" class="input-box">
+      <button class="search-button">検索</button>
+    </form>
+
+      <ul class="list">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.user_name, "#", class: "up-button" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "down-button" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "up-button" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "down-button" %></li>
+      <% end %>
+      </ul>
+  </div>
+  <div class="second-header">
+    <ul class="category">
+      <li>素材</li>
+      <li>季節</li>
+      <li>主菜</li>
+      <li>副菜</li>
+      <li>汁物</li>
+    </ul>
+    <div class="right-content">
+      <%= link_to 'レシピ投稿', "#",  class: "post-button" %>
+    </div>
+  </div>
+</header>
