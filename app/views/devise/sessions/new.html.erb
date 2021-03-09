@@ -1,0 +1,36 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'user/login' %>
+<% end %>
+
+<%= render "shared/header"%>
+
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
+<div class="main">
+  <div class="form-content">
+    <div class="sign-up-form">
+      <h2 class="heading-name">
+        ログインフォーム
+      </h2>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">メールアドレス</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"例)racook@xxx.co.jp", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">パスワード</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字記号" %>
+        <p class="info-text">※英字と数字は必ず1文字ずつ含めてください</p>
+      </div>
+      <div class='login'>
+        <%= f.submit "ログイン" ,class:"login-red-btn" %>
+      </div>
+    </div>
+  </div>
+  <%= render "shared/footer" %>
+</div>
+<% end %>
