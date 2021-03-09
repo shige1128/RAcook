@@ -1,0 +1,29 @@
+/*メイン*/
+.main {
+  padding: 5vh 15vw 0;
+  display: flex;
+  min-height: 80vh;
+  background-color: #f5f3f2;
+}
+.mein-content {
+  height: 60vh;
+  width: 70%;
+  margin-right: 2vw;
+  border: solid 1px;
+  background-color: white;
+}
+.todays-menu {
+  margin-bottom: 10px;
+}
+
+/*右側サブコンテンツ*/
+.right-side {
+  width: 30%;
+  height: 300px;
+  border: 1px solid black;
+  background-color: antiquewhite;
+}
+.best-ranking {
+  list-style: none;
+  padding-left: 0;
+}

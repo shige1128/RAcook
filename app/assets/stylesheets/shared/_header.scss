@@ -1,0 +1,91 @@
+/*ヘッダー*/
+.site-header {
+  padding: 1vh 15vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #a7d28f;
+}
+.top-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.top-logo {
+  width: 10vw;
+  margin-right: 5vw;
+}
+.racook-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.search-form {
+  width: 35vw;
+  height: 5vh;
+  margin-right: 10vw;
+  display: flex;
+}
+.input-box {
+  width: 35vw;
+  height: 40px;
+  padding-left: 10px;
+}
+.search-button {
+  width: 50px;
+  height: 5vh;
+  cursor: pointer;
+}
+
+/*ログイン、登録ボタン*/
+.list {
+  width: 200px;
+  height: 5vh;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.up-button {
+  margin-left: 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.down-button {
+  margin-left: 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/*第２ヘッダー*/
+.second-header {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.category {
+  width: 60vw;
+  height: 3vh;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border: 1px solid gray;
+}
+/*投稿ボタン*/
+.right-content {
+  width: 10vw;
+  height: 4vh;
+  margin-left: 20px;
+  display: flex;
+}
+.post-button {
+  padding: 10px;
+  font-size: 15px;
+  color: brown;
+  background-color: orange;
+  border: solid 1px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
