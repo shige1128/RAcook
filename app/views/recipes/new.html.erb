@@ -1,0 +1,101 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'recipes/new' %>
+<% end %>
+
+<%= render "shared/header"%>
+
+<%= form_with model: @recipe, url: recipes_path, class: 'recipe-main', local: true do |f| %>
+<div class="main">
+  <main class="form-content">
+    <form class="recipe-form">
+      <h2 class="heading-name">
+        新規レシピ作成
+      </h2>
+        <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">レシピ名</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :dish_name, class:"input-default", id:"dish_name", placeholder:"例)にんじんとだいこんのうま煮", maxlength:"40", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">キャッチコピー</label>
+        </div>
+        <%= f.text_field :catch_copy, class:"input-default", id:"catch_copy", placeholder:"このレシピの説明やメッセージを入力" %>
+        <p class="info-text">100文字まで</p>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">分量(人分)</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:dish_portion_id, DishPortion.all, :id, :name, {}) %>
+        <p class="info-text">1人分 or 2人分</p>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">材料</label>
+          <span class="indispensable">必須</span>
+        <p class="info-text">複数選択可能</p>          
+        </div>
+        <%= f.collection_check_boxes(:dish_ingredient_ids, DishIngredient.all, :id, :name, {include_hidden: false}, {class:"check-box"}) do |d| %>
+        <fieldset>
+          <%= d.label { d.check_box + d.text } %>
+        </fieldset>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">調味料</label>
+        <p class="info-text">複数選択可能</p>          
+        </div>
+        <%= f.collection_check_boxes(:seasoning_ids, Seasoning.all, :id, :name, {include_hidden: false}, {class:"check-box"}) do |s| %>
+          <%= s.label { s.check_box + s.label } %>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">手順１</label>
+        </div>
+        <%= f.text_field :step_1, class:"input-default", id:"step_1",  maxlength:"100" %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">手順２</label>
+        </div>
+        <%= f.text_field :step_2, class:"input-default", id:"step_2",  maxlength:"100" %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">手順３</label>
+        </div>
+        <%= f.text_field :step_3, class:"input-default", id:"step_3",  maxlength:"100" %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">手順４</label>
+        </div>
+        <%= f.text_field :step_4, class:"input-default", id:"step_4",  maxlength:"100" %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">手順５</label>
+        </div>
+        <%= f.text_field :step_5, class:"input-default", id:"step_5",  maxlength:"100" %>
+      </div>
+      <div class="form-group">
+        <div class="form-text-wrap">
+          <label class="form-text">コツ、ワンポイントアドバイス</label>
+        </div>
+        <%= f.text_field :dish_point, class:"input-default", id:"dish_point" %>
+        <p class="info-text">100文字まで</p>
+      </div>
+
+      <%= f.submit "レシピ完成！", class:"send"%>
+    </form>
+  </main>
+<%= render "shared/footer" %>
+<% end %>
