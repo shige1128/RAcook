@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :area
+  has_many   :recipes
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
