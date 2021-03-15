@@ -4,20 +4,47 @@
 
 <%= render "shared/header"%>
   <div class="main">
-    <div class="mein-content">
-      <div class="todays-menu">
-        今日はこれを食っとけ
+    <div class="up-contents">
+      <div class="mein-content">
+        <h2 class="title">今日はこれを食っとけ</h2>
+      </div>
+      <div class="right-side">
+        <div class="best-menu">
+          <div class="best-title">人気のメニュー</div>
+          <ul class="best-ranking">
+            <li>1.</li>
+            <li>2.</li>
+            <li>3.</li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="right-side">
-      <div class="best-menu">
-        <div class="best-title">人気のメニュー</div>
-        <ul class="best-ranking">
-          <li>1.</li>
-          <li>2.</li>
-          <li>3.</li>
-        </ul>
-      </div>
+    <div class="recipe-contents">
+      <h2 class="title">レシピ一覧</h2>
+      <ul class="recipe-lists">
+        <% @recipe.each do |recipe| %>
+          <li class="lists">
+            <%= link_to recipe_path(recipe.id) do%>
+              <div class="recipe-img-content">
+                <%= image_tag recipe.image, class:"recipe-img" if recipe.image.attached?%>
+              </div>
+              <div class="recipe-info">
+                <span class="recipe-name">
+                  <%= recipe.dish_name %>
+                </span>
+                <%= link_to "#" do %>
+                  <span>
+                    <span class="saku">作:</span>
+                    <span class="user-name">
+                      <%= recipe.user.user_name %>
+                    </span>
+                  </span>
+                <% end %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
   <%= render "shared/footer" %>
