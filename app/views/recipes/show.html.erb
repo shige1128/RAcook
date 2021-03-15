@@ -1,0 +1,106 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'recipes/show' %>
+<% end %>
+
+<%= render "shared/header"%>
+
+<div class="main">
+  <div class="center">
+    <div class="title-section">
+      <h1 class="dish-title">
+        <%= @recipe.dish_name %>
+      </h1>
+      <div class="good-button">
+        いいね
+      </div>
+    </div>
+    <div class="image-section">
+      <%= image_tag @recipe.image ,class:"dish-img" %>
+      <div class="dish-catchcopy">
+        <div class="catchcopy-title">
+          <h2 class="catchcopy">
+            キャッチコピー
+          </h2>
+          <div class="cook-name">
+            <span class="user-name"><%= "作:" + @recipe.user.user_name %></span>
+          </div>
+        </div>
+        <div class="catchcopy-text">
+          <%= @recipe.catch_copy %>
+        </div>
+      </div>
+    </div>
+    <div class="seasoning-ingredient-section">
+      <div class="contents">
+        <h2 class="title">
+          調味料
+        </h2>
+        <div class="list-group">
+          <% @recipe.recipe_seasonings.each do |recipe|%>
+            <div class="lists">
+              <%= recipe.seasoning.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="contents">
+        <h2 class="title">
+          材料
+        </h2>
+        <div class="list-group">
+          <% @recipe.recipe_ingredients.each do |recipe|%>
+            <div class="lists">
+              <%= recipe.dish_ingredient.name %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="process-section">
+      <h2 class="process-title">
+        作り方  
+      </h2>
+      <ul class="process-list">
+        <li>1,<%= @recipe.step_1 %></li>
+        <li>2,<%= @recipe.step_2 %></li>
+        <li>3,<%= @recipe.step_3 %></li>
+        <li>4,<%= @recipe.step_4 %></li>
+        <li>5,<%= @recipe.step_5 %></li>
+      </ul>
+    </div>
+    <div class="point-section">
+      <h2 class="point-title">
+      コツ・ワンポイントアドバイス
+      </h2>
+      <div class="point-text">
+        <%= @recipe.dish_point %>
+      </div>
+    </div>
+    <div class="comment-section">
+      <h2 class="comment-title">
+        コメント
+      </h2>
+   <% if false %>
+      <% @comments.each do |comment| %>
+        <p>
+          <li class="comments_list">
+            <%= comment.comment %>   
+            <%= link_to comment.user.name, "/users/#{@prototype.user.id}", class: :comment_user %>
+          </li>
+        </p>
+      <% end %>
+      <form>
+        <%= form_with(model: [@recipe, @comment], local: true) do |f| %>
+          <%= f.label :comment, "コメントする" %>
+          <%= f.text_field :comment %>
+          <div class="submit">
+          <%= f.submit "送信する", class: :form__btn  %>
+          </div>
+        <% end %>
+      </form>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
