@@ -4,6 +4,7 @@ class Recipe < ApplicationRecord
 
   belongs_to :user
   has_one_attached :image
+  has_many   :likes
 
   has_many   :recipe_ingredients
   has_many   :dish_ingredients, through: :recipe_ingredients
