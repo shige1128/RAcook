@@ -1,0 +1,11 @@
+<% if current_user.liked_by?(recipe.id) %>
+  <div class="unlike-button">
+    <%= link_to 'いいねを外す', destroy_like_path(recipe), method: :DELETE, remote: true %>
+  </div>
+  <p><%= recipe.likes.count %></p>
+<% else %>
+  <div class="like-button">
+    <%= link_to 'いいね', create_like_path(recipe), method: :POST, remote: true %>
+  </div>
+  <p><%= recipe.likes.count %></p>
+<% end %>

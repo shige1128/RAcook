@@ -10,8 +10,8 @@
       <h1 class="dish-title">
         <%= @recipe.dish_name %>
       </h1>
-      <div class="good-button">
-        いいね
+      <div class="like-contents", id="recipe_<%= @recipe.id %>">
+        <%= render 'likepost', recipe: @recipe %>
       </div>
     </div>
     <div class="image-section">

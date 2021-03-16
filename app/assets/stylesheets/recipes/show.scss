@@ -19,12 +19,27 @@ h2 {
       h1 {
         font-size: 4vh;
       }
-      .good-button {
+      .like-contents {
         margin-right: 10vw;
-        padding: 7px;
-        font-size: 15px;
-        border: red 2px solid;
-        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        .like-button {
+          padding: 7px;
+          font-size: 15px;
+          border: rgb(243, 167, 244) 2px solid;
+          border-radius: 15px;
+        }
+        .unlike-button {
+          padding: 7px;
+          font-size: 15px;
+          border: rgb(243, 167, 244) 2px solid;
+          background-color: rgb(243, 167, 244);
+          border-radius: 15px;
+        }
+        p {
+          margin: 5px;
+          color:slategray;
+        }
       }
     }
     .image-section {

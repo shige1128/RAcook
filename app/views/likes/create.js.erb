@@ -1,0 +1,1 @@
+document.getElementById('recipe_<%= @recipe.id %>').innerHTML = '<%= escape_javascript(render 'recipes/likepost', recipe: @recipe) %>'
