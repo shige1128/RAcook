@@ -15,6 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(
   recipes/index.css
   recipes/new.css
+  recipes/show.css
   shared/_header.css
   shared/_footer.css
   user/login.css
