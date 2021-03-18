@@ -35,7 +35,7 @@
         <div class="form-text-wrap">
           <label class="form-text">キャッチコピー</label>
         </div>
-        <%= f.text_field :catch_copy, class:"input-default", id:"catch_copy", placeholder:"このレシピの説明やメッセージを入力" %>
+        <%= f.text_field :catch_copy, class:"input-text", id:"catch_copy", placeholder:"このレシピの説明やメッセージを入力" %>
         <p class="info-text">100文字まで</p>
       </div>
       <div class="form-group">
@@ -43,60 +43,64 @@
           <label class="form-text">分量(人分)</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:dish_portion_id, DishPortion.all, :id, :name, {}) %>
+        <div class="portion_form">
+          <%= f.collection_select(:dish_portion_id, DishPortion.all, :id, :name, {}, {class:"portion"}) %>
+        </div>
         <p class="info-text">1人分 or 2人分</p>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">材料</label>
           <span class="indispensable">必須</span>
-        <p class="info-text">複数選択可能</p>          
+          <p class="info-text">複数選択可能</p>          
         </div>
-        <%= f.collection_check_boxes(:dish_ingredient_ids, DishIngredient.all, :id, :name, {include_hidden: false}, {class:"check-box"}) do |d| %>
-        <fieldset>
-          <%= d.label { d.check_box + d.text } %>
-        </fieldset>
-        <% end %>
+        <div class="check-box">
+          <%= f.collection_check_boxes(:dish_ingredient_ids, DishIngredient.all, :id, :name, {include_hidden: false}) do |d| %>
+            <fieldset><%= d.label { d.check_box + d.text } %></fieldset>
+          <% end %>
+        </div>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">調味料</label>
         <p class="info-text">複数選択可能</p>          
         </div>
-        <%= f.collection_check_boxes(:seasoning_ids, Seasoning.all, :id, :name, {include_hidden: false}, {class:"check-box"}) do |s| %>
-          <%= s.label { s.check_box + s.label } %>
-        <% end %>
+        <div class="check-box">
+          <%= f.collection_check_boxes(:seasoning_ids, Seasoning.all, :id, :name, {include_hidden: false}) do |s| %>
+            <fieldset><%= s.label { s.check_box + s.label } %></fieldset>
+          <% end %>
+        </div>
       </div>
 
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順１</label>
         </div>
-        <%= f.text_field :step_1, class:"input-default", id:"step_1",  maxlength:"100" %>
+        <%= f.text_field :step_1, class:"input-text", placeholder:"例)材料を水で洗ったら、〇〇を一口大に切り耐熱皿に入れてレンジで3分加熱する", id:"step_1",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順２</label>
         </div>
-        <%= f.text_field :step_2, class:"input-default", id:"step_2",  maxlength:"100" %>
+        <%= f.text_field :step_2, class:"input-text", id:"step_2",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順３</label>
         </div>
-        <%= f.text_field :step_3, class:"input-default", id:"step_3",  maxlength:"100" %>
+        <%= f.text_field :step_3, class:"input-text", id:"step_3",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順４</label>
         </div>
-        <%= f.text_field :step_4, class:"input-default", id:"step_4",  maxlength:"100" %>
+        <%= f.text_field :step_4, class:"input-text", id:"step_4",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順５</label>
         </div>
-        <%= f.text_field :step_5, class:"input-default", id:"step_5",  maxlength:"100" %>
+        <%= f.text_field :step_5, class:"input-text", id:"step_5",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
