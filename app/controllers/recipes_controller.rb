@@ -20,6 +20,14 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def  search
+    @keyword = params[:keyword]
+    @recipes = Recipe.search(params[:keyword])
+  end
+
+  def deleate
+  end
+
   private
 
   def recipe_params
