@@ -80,25 +80,25 @@
       <h2 class="comment-title">
         コメント
       </h2>
-   <% if false %>
-      <% @comments.each do |comment| %>
-        <p>
-          <li class="comments_list">
-            <%= comment.comment %>   
-            <%= link_to comment.user.name, "/users/#{@prototype.user.id}", class: :comment_user %>
-          </li>
-        </p>
-      <% end %>
-      <form>
-        <%= form_with(model: [@recipe, @comment], local: true) do |f| %>
-          <%= f.label :comment, "コメントする" %>
-          <%= f.text_field :comment %>
-          <div class="submit">
-          <%= f.submit "送信する", class: :form__btn  %>
+      <div class="comment-content">
+        <% if @comments.present? %>
+          <div class="comment-lists">
+            <% @comments.each do |comment| %>
+              <li >
+                <p class="comment-user"><%= comment.user.user_name %> さん</p>
+                <p class="comment-text"><%= comment.text %></p>
+                <p class="comment-date"><%= comment.created_at.strftime("%Y年%m月%d日 %H:%M") %></p>
+              </li>
+            <% end %>
           </div>
         <% end %>
-      </form>
-    <% end %>
+        <% if user_signed_in? %>
+            <%= form_with(model: [@recipe, @comment], local: true, class: "comment-form") do |f| %>
+                <%= f.text_area :text, placeholder: "コメントする", class: "form" %>
+                <%= f.submit "コメント投稿", class: "btn" %>
+            <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
