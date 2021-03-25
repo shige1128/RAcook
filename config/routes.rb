@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    member do
+      get 'tag_search'
+    end
   end
   
   post 'like/:id' => 'likes#create', as: 'create_like'

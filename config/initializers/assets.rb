@@ -22,5 +22,4 @@ Rails.application.config.assets.precompile += %w(
   user/login.css
   user/registration.css
   _reset.css
-  javascript/header.js
 )
