@@ -73,47 +73,6 @@
   border: 1px solid gray;
   position: relative; /* 絶対配置の基準を設定 */
 }
-/*カテゴリー三角アイコン*/
-.arrow_u {
-  position: relative;
-  display: inline-block;
-  padding-left: 20px;
-  color: #333;
-  text-decoration: none;
-}
-.arrow_u:before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border: 0;
-  border-bottom: solid 2px #333;
-  border-right: solid 2px #333;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -6px;
-  transform: rotate(45deg);
-}
-.dropdown-body {
-  padding: 5px;
-  background: #fff;
-  box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
-  border-radius: 4px;
-  overflow: hidden;
-  top: 32px;
-  left: 0;
-  position: absolute; /* メニュー部分は絶対配置させます */
-  display: none;
-  flex-wrap: wrap;
-}
-/*カテゴリーボタン*/
-.dropdown-list {
-  height: 15px;
-  width: 100px;
-  margin: 0 10px 10px 0;
-  list-style: none;
-}
-
 /*投稿ボタン*/
 .right-content {
   width: 10vw;
@@ -130,4 +89,75 @@
   border-radius: 5px;
   text-decoration: none;
 }
+/*カテゴリーボタン*/
+.dropdown-list {
+  height: 15px;
+  width: 100px;
+  margin: 0 10px 10px 0;
+  list-style: none;
+}
 
+/*カテゴリー三角アイコン*/
+.dropdown-button {
+}
+.arrow_u {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+.arrow_u:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-bottom: solid 2px #333;
+  border-right: solid 2px #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -6px;
+  transform: rotate(45deg);
+}
+.arrow_o {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+.arrow_o:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-top: solid 2px #333;
+  border-right: solid 2px #333;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -4px;
+  transform: rotate(-45deg);
+}
+
+/*ドロップダウンウィンドウ*/
+.dropdown-body {
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0 2px 6px 2px rgba(60,64,67,0.149), 0 1px 2px 0 rgba(60,64,67,0.302);
+  border-radius: 4px;
+  overflow: hidden;
+  top: 32px;
+  left: 0;
+  position: absolute; /* メニュー部分は絶対配置させます */
+  flex-wrap: wrap;
+}
+.hidden {
+  display: none;
+}
+.dropdown-button-2 {
+  position: relative;
+}

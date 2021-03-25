@@ -25,23 +25,43 @@
       </ul>
   </div>
   <div class="second-header">
+    <%= javascript_pack_tag 'shared/application' %>
     <div class="category">
-      <div class="dropdown-button" id="dropdown_btn_1"><a href="#" class="arrow_u">素材</a>
-        <div class="dropdown-body">
-          <% DishIngredient.all.each do |d| %>
-            <ul class="dropdown-list">
-              <li><%= d.name %></li>
-            </ul>
+      <div class="dropdown-button" id="dropdown-btn-1"><a class="arrow_u" id="arrow-1">素材</a>
+        <div class="dropdown-body hidden" id="drop-down-1">
+          <% DishIngredient.all.each do |dish_ingredient| %>
+            <%= link_to tag_search_recipe_path(dish_ingredient), method: :get do %>
+              <li class="dropdown-list"><%= dish_ingredient.name %></li>
+            <% end %>
           <% end %>
         </div>
       </div>
-      <div class="dropdown-button" id="dropdown_btn_2"><a href="#" class="arrow_u">季節</a>
+      <div class="dropdown-button-2" id="dropdown-btn-2"><a class="arrow_u" id="arrow-2">季節</a>
+        <div class="dropdown-body hidden" id="drop-down-2">
+          <% Season.all.each do |season| %>
+            <%= link_to tag_search_recipe_path(season), method: :get do %>
+              <li class="dropdown-list"><%= season.name %></li>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="dropdown-button" id="dropdown_btn_3"><a href="#" class="arrow_u">主菜</a>
+      <div class="dropdown-button-2" id="dropdown-btn-3"><a class="arrow_u" id="arrow-3">ジャンル</a>
+        <div class="dropdown-body hidden" id="drop-down-3">
+          <% Genre.all.each do |genre| %>
+            <%= link_to tag_search_recipe_path(genre), method: :get do %>
+              <li class="dropdown-list"><%= genre.name %></li>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="dropdown-button" id="dropdown_btn_4"><a href="#" class="arrow_u">副菜</a>
-      </div>
-      <div class="dropdown-button" id="dropdown_btn_5"><a href="#" class="arrow_u">汁物</a>
+      <div class="dropdown-button-2" id="dropdown-btn-4"><a class="arrow_u" id="arrow-4">ランキング</a>
+        <div class="dropdown-body hidden" id="drop-down-4">
+          <% Recipe.all.each do |recipe| %>
+            <%= link_to tag_search_recipe_path(recipe), method: :get do %>
+              <li class="dropdown-list"><%= recipe.dish_name %></li>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="right-content">
