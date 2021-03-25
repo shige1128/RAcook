@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "recipes#index"
 
   resources :recipes, only: [:index, :new, :create, :show] do
+    resources :comments, only: :create
     collection do
       get 'search'
     end
