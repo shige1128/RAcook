@@ -1,6 +1,8 @@
 class Recipe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :dish_portion
+  belongs_to :genre
+  belongs_to :season
 
   belongs_to :user
   has_one_attached :image
@@ -12,7 +14,7 @@ class Recipe < ApplicationRecord
   has_many   :recipe_seasonings
   has_many   :seasonings, through: :recipe_seasonings
 
-  validates  :image, :dish_name, :dish_portion_id, :step_1, presence: true
+  validates  :image, :dish_name, :dish_portion_id, :season_id, :genre_id, :step_1, presence: true
   validates  :dish_portion_id, numericality: { other_than: 1 }
 
   def self.search(search)
@@ -21,6 +23,14 @@ class Recipe < ApplicationRecord
         "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
     else
       Recipe.all
+    end
+  end
+
+  def self.tag_search(tag_search)
+    if tag_search
+      RecipeIngredient.where(['dish_ingredient_id LIKE(?), "#{tagsearch}"'])
+    else
+      RecipeIngredient.all
     end
   end
 
