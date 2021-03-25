@@ -12,7 +12,7 @@ h2 {
     background-color: white;
     padding: 1vh 5vw;
     .title-section {
-      margin-bottom: 1vh;
+      margin-bottom: 2vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -51,7 +51,7 @@ h2 {
       }
     }
     .image-section {
-      margin-bottom: 1vh;
+      margin-bottom: 2vh;
       display: flex;
       justify-content: space-around;
       .dish-img {
@@ -61,6 +61,7 @@ h2 {
         width: 30vw;
         margin:2vh 1vw;
         .catchcopy-title {
+          margin-bottom: 2vh;
           display: flex;
           justify-content: space-between;
           .catchcopy {
@@ -81,7 +82,6 @@ h2 {
         box-shadow :0px 0px 5px silver;
         padding: 0.5em 0.5em 0.5em 2em;
         font-size: 20px;
-        margin-top: 1vh;
         flex-wrap: wrap;
       }
     }
@@ -94,7 +94,7 @@ h2 {
         width: 34vw;
         padding-right: 5vw;
         .title {
-          margin-bottom: 1vh;
+          margin-bottom: 2vh;
         }
         .list-group {
           height: 200px;
@@ -114,7 +114,7 @@ h2 {
       }
     }
     .process-section {
-      margin-bottom: 1vh;
+      margin-bottom: 3vh;
       .process-title {
         text-align: center;
       }
@@ -125,8 +125,9 @@ h2 {
         border-radius :8px;
         box-shadow :0px 0px 5px silver;
         font-size: 20px;
-        margin: 1vh 2vw;
+        margin: 1vh 2vw 0;
         li {
+          margin-bottom: 1vh;
           padding: 1vh;
           font-size: 20px;
           flex-wrap: wrap;
@@ -134,6 +135,7 @@ h2 {
       }
     }
     .point-section {
+      margin-bottom: 3vh;
       padding: 1vh auto;
       font-size: 20px;
       flex-wrap: wrap;
@@ -150,8 +152,48 @@ h2 {
       }
     }
     .comment-section {
+      width: 40vw;
+      margin: 0 auto;
       .comment-title {
         text-align: center;
+        margin-bottom: 2vh;
+      }
+      .comment-content {
+        background: #fffcf4;
+        border-radius :8px;
+        box-shadow :0px 0px 5px silver;
+        padding: 0.5em 0.5em 0.5em 2em;
+        .comment-lists {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          li {
+            margin: 10px 0;
+          }
+          p {
+            margin: 1vh;
+            white-space: pre-wrap;
+          }
+          .comment-user, .comment-date{
+            color: dimgray;
+            font-size: 15px;
+          }
+        }
+        .comment-form {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          .form {
+            height: 10vh;
+            width: 25vw;
+            padding: 8px;
+            margin: 0;
+          }
+          .btn {
+            height: 3vh;
+            margin-left: 10px;
+          }
+        }
       }
     }
   }
