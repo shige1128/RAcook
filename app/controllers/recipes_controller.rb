@@ -34,7 +34,13 @@ class RecipesController < ApplicationController
     @recipes = params[:id].present? ? DishIngredient.find(params[:id]).recipes : Recipe.all
   end
 
-  def deleate
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

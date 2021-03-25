@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'recipes/index'
   root to: "recipes#index"
 
-  resources :recipes, only: [:index, :new, :create, :show] do
+  resources :recipes do
     resources :comments, only: :create
     collection do
       get 'search'
