@@ -1,0 +1,36 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'recipes/search' %>
+<% end %>
+
+<%= render "shared/header"%>
+  <div class="main">
+    <div class="recipe-contents">
+      <div class="title">
+        <%= "「" + @keyword + "」の検索結果" %>
+      </div>
+      <ul class="recipe-lists">
+        <% @recipes.each do |recipe| %>
+          <li class="lists">
+            <%= link_to recipe_path(recipe.id) do%>
+              <div class="recipe-img-content">
+                <%= image_tag recipe.image, class:"recipe-img" if recipe.image.attached?%>
+              </div>
+              <div class="recipe-info">
+                <span class="recipe-name">
+                  <%= recipe.dish_name %>
+                </span>
+                <%= link_to "#" do %>
+                  <span>
+                    <span class="user-name">
+                      <%= "作:" + recipe.user.user_name %>
+                    </span>
+                  </span>
+                <% end %>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= render "shared/footer" %>

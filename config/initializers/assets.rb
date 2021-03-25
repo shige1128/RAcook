@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w(
   recipes/index.css
   recipes/new.css
   recipes/show.css
+  recipes/search.css
   shared/_header.css
   shared/_footer.css
   user/login.css

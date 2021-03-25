@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_135956) do
     t.string "step_4"
     t.string "step_5"
     t.string "dish_point"
+    t.integer "genre_id", null: false
+    t.integer "season_id", null: false
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -10,6 +10,8 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.string  :step_4
       t.string  :step_5
       t.string  :dish_point
+      t.integer :genre_id,              null: false
+      t.integer :season_id,             null: false
       t.integer :user_id,            foreign_key: true
       t.timestamps
     end

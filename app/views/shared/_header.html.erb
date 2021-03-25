@@ -1,16 +1,18 @@
 <% content_for :css do %>
   <%= stylesheet_link_tag 'shared/_header' %>
 <% end %>
-
+ 
 <header class="site-header">
   <div class="top-header">
     <div class="top-logo">
       <%= link_to image_tag("racook-logo.PNG", class:"racook-logo"), "/" %>
     </div>
-    <form class="search-form">
-      <input type="seach" placeholder="検索…料理名or材料名" class="input-box">
-      <button class="search-button">検索</button>
-    </form>
+
+      <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |f| %>
+        <%= f.text_field :keyword, placeholder: "検索…料理名or材料名", class: "input-box" %>
+        <%= f.submit '検索', class: "search-button" %>
+      <% end %>
+
 
       <ul class="list">
       <% if user_signed_in? %>
@@ -23,13 +25,45 @@
       </ul>
   </div>
   <div class="second-header">
-    <ul class="category">
-      <li>素材</li>
-      <li>季節</li>
-      <li>主菜</li>
-      <li>副菜</li>
-      <li>汁物</li>
-    </ul>
+    <%= javascript_pack_tag 'shared/application' %>
+    <div class="category">
+      <div class="dropdown-button" id="dropdown-btn-1"><a class="arrow_u" id="arrow-1">素材</a>
+        <div class="dropdown-body hidden" id="drop-down-1">
+          <% DishIngredient.all.each do |dish_ingredient| %>
+            <%= link_to tag_search_recipe_path(dish_ingredient), method: :get do %>
+              <li class="dropdown-list"><%= dish_ingredient.name %></li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="dropdown-button-2" id="dropdown-btn-2"><a class="arrow_u" id="arrow-2">季節</a>
+        <div class="dropdown-body hidden" id="drop-down-2">
+          <% Season.all.each do |season| %>
+            <%= link_to tag_search_recipe_path(season), method: :get do %>
+              <li class="dropdown-list"><%= season.name %></li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="dropdown-button-2" id="dropdown-btn-3"><a class="arrow_u" id="arrow-3">ジャンル</a>
+        <div class="dropdown-body hidden" id="drop-down-3">
+          <% Genre.all.each do |genre| %>
+            <%= link_to tag_search_recipe_path(genre), method: :get do %>
+              <li class="dropdown-list"><%= genre.name %></li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="dropdown-button-2" id="dropdown-btn-4"><a class="arrow_u" id="arrow-4">ランキング</a>
+        <div class="dropdown-body hidden" id="drop-down-4">
+          <% Recipe.all.each do |recipe| %>
+            <%= link_to tag_search_recipe_path(recipe), method: :get do %>
+              <li class="dropdown-list"><%= recipe.dish_name %></li>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <div class="right-content">
       <%= link_to 'レシピ投稿', new_recipe_path,  class: "post-button" %>
     </div>

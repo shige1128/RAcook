@@ -24,13 +24,20 @@ h2 {
         display: flex;
         align-items: center;
         .like-button {
-          padding: 7px;
+          padding: 5px;
           font-size: 15px;
           border: rgb(243, 167, 244) 2px solid;
           border-radius: 15px;
         }
         .unlike-button {
-          padding: 7px;
+          padding: 5px;
+          font-size: 15px;
+          border: rgb(243, 167, 244) 2px solid;
+          background-color: rgb(243, 167, 244);
+          border-radius: 15px;
+        }
+        .like-count {
+          padding: 5px;
           font-size: 15px;
           border: rgb(243, 167, 244) 2px solid;
           background-color: rgb(243, 167, 244);

@@ -5,9 +5,8 @@
 <%= render "shared/header"%>
 
 <%= form_with model: @recipe, url: recipes_path, class: 'recipe-main', local: true do |f| %>
-<div class="main">
-  <main class="form-content">
-    <form class="recipe-form">
+  <div class="main">
+    <main class="form-content">
       <h2 class="heading-name">
         新規レシピ作成
       </h2>
@@ -75,6 +74,7 @@
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順１</label>
+          <span class="indispensable">必須</span>
         </div>
         <%= f.text_field :step_1, class:"input-text", placeholder:"例)材料を水で洗ったら、〇〇を一口大に切り耐熱皿に入れてレンジで3分加熱する", id:"step_1",  maxlength:"100" %>
       </div>
@@ -109,9 +109,31 @@
         <%= f.text_field :dish_point, class:"input-default", id:"dish_point" %>
         <p class="info-text">100文字まで</p>
       </div>
-
+      <div class="tag-select">
+        <div class="select-group">
+          <div class="form-text-wrap">
+            <label class="form-text">こんな季節に食べたい！</label>
+          </div>
+          <div class="check-box season">
+            <%= f.collection_radio_buttons(:season_id, Season.all, :id, :name, {}) do |s| %>
+              <div class="short"><%= s.radio_button + s.label %></div>
+            <% end %>
+          </div>
+        </div>
+        <div class="select-group">
+          <div class="form-text-wrap">
+            <label class="form-text">食卓ポジション</label>
+          </div>
+          <div class="check-box season">
+            <%= f.collection_radio_buttons(:genre_id, Genre.all, :id, :name, {}) do |s| %>
+              <div class="short"><%= s.radio_button + s.label %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <%= f.submit "レシピ完成！", class:"send"%>
-    </form>
-  </main>
-<%= render "shared/footer" %>
+    </main>
+  </div>
 <% end %>
+
+<%= render "shared/footer" %>
