@@ -10,9 +10,21 @@
       <h1 class="dish-title">
         <%= @recipe.dish_name %>
       </h1>
-      <div class="like-contents", id="recipe_<%= @recipe.id %>">
-        <%= render 'likepost', recipe: @recipe %>
-      </div>
+      <ul class="button-list">
+        <div class="like-contents", id="recipe_<%= @recipe.id %>">
+          <%= render 'likepost', recipe: @recipe %>
+        </div>
+        <% if user_signed_in? %>
+          <% if current_user.id == @recipe.user_id %>
+            <div class="edit-btn">
+              <%= link_to '編集', edit_recipe_path(@recipe.id), merthod: :get, class: "btn" %>
+            </div>
+            <div class="delete-btn">
+              <%= link_to '削除', recipe_path(@recipe.id), method: :delete, class: "btn" %>
+            </div>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
     <div class="image-section">
       <%= image_tag @recipe.image ,class:"dish-img" %>

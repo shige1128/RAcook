@@ -4,9 +4,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :area
-  has_many   :recipes
-  has_many   :likes
-  has_many   :comments
+  has_many   :recipes,  dependent: :destroy
+  has_many   :likes,    dependent: :destroy
+  has_many   :comments, dependent: :destroy
   
   validates :user_name, :birthday, presence: true
   validates :area_id, numericality: { other_than: 1 }
