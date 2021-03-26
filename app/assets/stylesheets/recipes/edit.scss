@@ -1,0 +1,133 @@
+/*メイン*/
+.main {
+  padding: 0 20vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f3f2;
+}
+
+/*form部分*/
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+}
+.heading-name {
+  margin: 50px auto 0;
+  font-size: 30px;
+  color: red;
+}
+p {
+  font-size: 15px;
+  margin: 1vh 0;
+}
+.form-text {
+  font-size: 15px;
+}
+.form-group {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.indispensable {
+  font-size: 15px;
+  color: red;
+}
+.info-text {
+  color: #888;
+  font-size: 15px;
+  margin-top: 3px;
+}
+.input-default {
+  width: 95%;
+  height: 40px;
+  margin-top: 5px;
+  padding-left: 10px;
+  text-justify: center;
+  font-size: 15px;
+  resize: none;
+}
+.info-text {
+  margin-top: 5px;
+}
+.input-birth-wrap {
+  height: 40px;
+  margin-top: 10px;
+  padding: 0 5vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.input-birth-wrap select {
+  width: 90px;
+  height: 40px;
+  padding-left: 10px;
+}
+.select-box {
+  height: 40px;
+  width: 40%;
+  margin: 5px auto 0;
+  padding-left: 10px;
+}
+.send {
+  width: 40%;
+  height: 40px;
+  margin: 50px auto 30px;
+  border: none;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+.check-box {
+  background-color: white;
+}
+.season {
+  width: 70%;
+  margin-top: 5px;
+  display: flex;
+}
+
+fieldset {
+  width: 150px;
+  margin: 5px;
+  display: inline-block;
+}
+.short {
+  margin: 5px;
+  display: flex;
+}
+.tag-select {
+  width: 50vw;
+  margin: 0 auto;
+  display: flex;
+}
+.select-group {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.portion_form {
+  margin-top: 5px;
+}
+.portion {
+  height: 30px;
+  padding-left: 5px;
+}
+.input-text {
+  width: 95%;
+  height: 100px;
+  margin-top: 5px;
+  padding-left: 10px;
+  font-size: 15px;
+  resize: none;
+  flex-wrap: wrap;
+}

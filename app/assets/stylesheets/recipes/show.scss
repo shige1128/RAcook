@@ -1,3 +1,10 @@
+@mixin frame {
+  background: #fffcf4;
+  border-radius :8px;
+  box-shadow :0px 0px 5px silver;
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
 h2 {
   font-size: 2vw;
 }
@@ -19,34 +26,55 @@ h2 {
       h1 {
         font-size: 4vh;
       }
-      .like-contents {
-        margin-right: 10vw;
+      .button-list {
         display: flex;
         align-items: center;
-        .like-button {
-          padding: 5px;
-          font-size: 15px;
-          border: rgb(243, 167, 244) 2px solid;
-          border-radius: 15px;
+        .like-contents {
+          display: flex;
+          margin-right: 2vw;
+          .like-button {
+            padding: 5px;
+            font-size: 15px;
+            border: rgb(243, 167, 244) 2px solid;
+            border-radius: 15px;
+            .likebtn {
+              text-decoration: none;
+            }
+          }
+          .unlike-button {
+            padding: 5px;
+            font-size: 15px;
+            border: rgb(243, 167, 244) 2px solid;
+            background-color: rgb(243, 167, 244);
+            border-radius: 15px;
+            .likebtn {
+              text-decoration: none;
+            }
+          }
+          .like-count {
+            padding: 5px;
+            font-size: 15px;
+            border: rgb(243, 167, 244) 2px solid;
+            background-color: rgb(243, 167, 244);
+            border-radius: 15px;
+          }
+          p {
+            padding: 10px 5px 0;
+            color:slategray;
+            text-decoration: none;
+          }
         }
-        .unlike-button {
+        .edit-btn, .delete-btn {
           padding: 5px;
+          margin-left: 2vw;
           font-size: 15px;
-          border: rgb(243, 167, 244) 2px solid;
-          background-color: rgb(243, 167, 244);
+          border: rgb(85, 194, 87) 2px solid;
+          background-color: rgb(85, 194, 87);
           border-radius: 15px;
-        }
-        .like-count {
-          padding: 5px;
-          font-size: 15px;
-          border: rgb(243, 167, 244) 2px solid;
-          background-color: rgb(243, 167, 244);
-          border-radius: 15px;
-        }
-        p {
-          margin: 5px;
-          color:slategray;
-          text-decoration: none;
+          .btn {
+            font-size: 15px;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -102,10 +130,7 @@ h2 {
           flex-direction: column;
           align-items: flex-start;
           flex-wrap: wrap;
-          background: #fffcf4;
-          border-radius :8px;
-          box-shadow :0px 0px 5px silver;
-          padding: 0.5em 0.5em 0.5em 2em;
+          @include frame;
           .lists {
             padding: 1vh;
             font-size: 1vw;
@@ -121,10 +146,7 @@ h2 {
       .process-list {
         padding: 0.5em 0.5em 0.5em 2em;
         list-style: none;
-        background: #fffcf4;
-        border-radius :8px;
-        box-shadow :0px 0px 5px silver;
-        font-size: 20px;
+        @include frame;
         margin: 1vh 2vw 0;
         li {
           margin-bottom: 1vh;
@@ -145,10 +167,7 @@ h2 {
       .point-text {
         margin: 1vh 2vw;
         flex-wrap: wrap;
-        background: #fffcf4;
-        border-radius :8px;
-        box-shadow :0px 0px 5px silver;
-        padding: 0.5em 0.5em 0.5em 2em;
+        @include frame;
       }
     }
     .comment-section {
@@ -159,10 +178,7 @@ h2 {
         margin-bottom: 2vh;
       }
       .comment-content {
-        background: #fffcf4;
-        border-radius :8px;
-        box-shadow :0px 0px 5px silver;
-        padding: 0.5em 0.5em 0.5em 2em;
+        @include frame;
         .comment-lists {
           display: flex;
           flex-direction: column;
@@ -186,8 +202,11 @@ h2 {
           .form {
             height: 10vh;
             width: 25vw;
-            padding: 8px;
             margin: 0;
+            padding: 8px;
+            border-radius :8px;
+            box-shadow: none;
+            border: solid silver 1px;
           }
           .btn {
             height: 3vh;
