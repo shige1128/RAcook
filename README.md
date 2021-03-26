@@ -36,7 +36,7 @@
 - 野菜の相場表と連動させてお買い得な材料で作れるレシピのリコメンド機能
 - コミュニティ機能(地域のお買い得商品のクチコミを投稿できる)
 ## ER図
-![ER](https://user-images.githubusercontent.com/74100398/110233192-b335bd00-7f65-11eb-8f13-297f5d8bb3d4.png)
+![ER](https://user-images.githubusercontent.com/74100398/112615393-c7365580-8e65-11eb-8c5f-b67d270af939.png)
 ## ローカルでの動作方法
 ### 開発環境
 - MacOS Catalina(10.15.6)
