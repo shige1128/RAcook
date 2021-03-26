@@ -35,12 +35,27 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
   end
 
   def update
+    @recipe = Recipe.find(params[:id])
+    if current_user.id == @recipe.user_id
+      @recipe.update(recipe_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @recipe = Recipe.find(params[:id])
+    if current_user.id == @recipe.user_id
+      @recipe.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
