@@ -1,18 +1,18 @@
 class Recipe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :dish_portion
-  belongs_to :genre
-  belongs_to :season
+  belongs_to :genre, dependent: :destroy
+  belongs_to :season, dependent: :destroy
 
   belongs_to :user
-  has_one_attached :image
-  has_many   :likes
-  has_many   :comments
+  has_one_attached :image, dependent: :destroy
+  has_many   :likes, dependent: :destroy
+  has_many   :comments, dependent: :destroy
 
-  has_many   :recipe_ingredients
+  has_many   :recipe_ingredients, dependent: :destroy
   has_many   :dish_ingredients, through: :recipe_ingredients
 
-  has_many   :recipe_seasonings
+  has_many   :recipe_seasonings, dependent: :destroy
   has_many   :seasonings, through: :recipe_seasonings
 
   validates  :image, :dish_name, :dish_portion_id, :season_id, :genre_id, :step_1, presence: true
