@@ -7,22 +7,19 @@
     <div class="top-logo">
       <%= link_to image_tag("racook-logo.PNG", class:"racook-logo"), "/" %>
     </div>
-
-      <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |f| %>
-        <%= f.text_field :keyword, placeholder: "検索…料理名or材料名", class: "input-box" %>
-        <%= f.submit '検索', class: "search-button" %>
-      <% end %>
-
-
-      <ul class="list">
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.user_name, "#", class: "up-button" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "down-button" %></li>
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "up-button" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "down-button" %></li>
-      <% end %>
-      </ul>
+    <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "検索…料理名or材料名", class: "input-box" %>
+      <%= f.submit '検索', class: "search-button" %>
+    <% end %>
+    <ul class="list">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.user_name, "#", class: "up-button" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "down-button" %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "up-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "down-button" %></li>
+    <% end %>
+    </ul>
   </div>
   <div class="second-header">
     <%= javascript_pack_tag 'shared/application' %>
@@ -56,9 +53,11 @@
       </div>
       <div class="dropdown-button-2" id="dropdown-btn-4"><a class="arrow_u" id="arrow-4">ランキング</a>
         <div class="dropdown-body hidden" id="drop-down-4">
-          <% Recipe.all.each do |recipe| %>
-            <%= link_to tag_search_recipe_path(recipe), method: :get do %>
-              <li class="dropdown-list"><%= recipe.dish_name %></li>
+          <% @rank_recipe.each.with_index(1) do |recipe, i| %>
+            <%= link_to recipe_path(recipe), method: :get do %>
+              <li class="rank-list">
+                <a>No.<%= i %><%= recipe.dish_name %></a>
+              </li>
             <% end %>
           <% end %>
         </div>

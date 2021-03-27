@@ -1,0 +1,26 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'shared/_header' %>
+<% end %>
+ 
+<header class="site-header">
+  <div class="top-header">
+    <div class="top-logo">
+      <%= link_to image_tag("racook-logo.PNG", class:"racook-logo"), "/" %>
+    </div>
+    <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.text_field :keyword, placeholder: "検索…料理名or材料名", class: "input-box" %>
+      <%= f.submit '検索', class: "search-button" %>
+    <% end %>
+    <ul class="list">
+    <% if user_signed_in? %>
+      <li><%= link_to current_user.user_name, "#", class: "up-button" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "down-button" %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "up-button" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "down-button" %></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="second-header">
+  </div>
+</header>

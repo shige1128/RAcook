@@ -51,8 +51,8 @@
             margin-bottom: 1vh;
             font-size: 2vw;
             padding: 8px;
-            background: #cde4ff;
-            border-bottom: solid 5px #5989cf;          }
+            background: #fffacd;
+            border-bottom: solid 5px #cfb459;          }
           .today-img {
             max-height: 95%;
             max-width: 80%;
@@ -161,6 +161,7 @@
           justify-content: center;
           .recipe-img {
             height: 24vh;
+            max-width: 100%;
           }
         }
         .recipe-info {

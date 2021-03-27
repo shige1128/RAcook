@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
+  before_action :set_rank_recipe, only: [:index, :new, :create, :destroy, :edit, :update, :show, :search, :tag_search]
 
   def index
     @top_recipe = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(1).pluck(:recipe_id))
@@ -65,5 +66,9 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:image, :dish_name, :catch_copy, :dish_portion_id,
       :step_1, :step_2, :step_3, :step_4, :step_5, :season_id, :genre_id, :dish_point,
       dish_ingredient_ids:[], seasoning_ids:[]).merge(user_id: current_user.id)
+  end
+
+  def set_rank_recipe
+    @rank_recipe = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(5).pluck(:recipe_id))
   end
 end
