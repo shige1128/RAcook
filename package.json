@@ -16,6 +16,6 @@
 }
 {
   "scripts": {
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
   }
 }
