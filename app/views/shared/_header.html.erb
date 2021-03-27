@@ -27,7 +27,7 @@
       <div class="dropdown-button" id="dropdown-btn-1"><a class="arrow_u" id="arrow-1">素材</a>
         <div class="dropdown-body hidden" id="drop-down-1">
           <% DishIngredient.all.each do |dish_ingredient| %>
-            <%= link_to tag_search_recipe_path(dish_ingredient), method: :get do %>
+            <%= link_to ingredient_search_recipe_path(dish_ingredient), method: :get do %>
               <li class="dropdown-list"><%= dish_ingredient.name %></li>
             <% end %>
           <% end %>
@@ -36,7 +36,7 @@
       <div class="dropdown-button-2" id="dropdown-btn-2"><a class="arrow_u" id="arrow-2">季節</a>
         <div class="dropdown-body hidden" id="drop-down-2">
           <% Season.all.each do |season| %>
-            <%= link_to tag_search_recipe_path(season), method: :get do %>
+            <%= link_to season_search_recipe_path(season), method: :get do %>
               <li class="dropdown-list"><%= season.name %></li>
             <% end %>
           <% end %>
@@ -45,7 +45,7 @@
       <div class="dropdown-button-2" id="dropdown-btn-3"><a class="arrow_u" id="arrow-3">ジャンル</a>
         <div class="dropdown-body hidden" id="drop-down-3">
           <% Genre.all.each do |genre| %>
-            <%= link_to tag_search_recipe_path(genre), method: :get do %>
+            <%= link_to genre_search_recipe_path(genre), method: :get do %>
               <li class="dropdown-list"><%= genre.name %></li>
             <% end %>
           <% end %>

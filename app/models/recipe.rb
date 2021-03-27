@@ -27,12 +27,29 @@ class Recipe < ApplicationRecord
     end
   end
 
-  def self.tag_search(tag_search)
-    if tag_search
-      RecipeIngredient.where(['dish_ingredient_id LIKE(?), "#{tagsearch}"'])
+  def self.ingredient_search(ingredient_search)
+    if ingrtedient_search
+      RecipeIngredient.where(['dish_ingredient_id LIKE(?), "#{ingredientsearch}"'])
     else
       RecipeIngredient.all
     end
+
   end
+  def self.season_search(season_search)
+    if season_search
+      Season.where(['season_id LIKE(?), "#{seasonsearch}"'])
+    else
+      Season.all
+    end
+  end
+
+  def self.genre_search(genre_search)
+    if genre_search
+      Genre.where(['genre_id LIKE(?), "#{genresearch}"'])
+    else
+      Genre.all
+    end
+  end
+
 
 end

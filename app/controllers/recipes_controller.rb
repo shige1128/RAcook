@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :edit, :update]
-  before_action :set_rank_recipe, only: [:index, :new, :create, :destroy, :edit, :update, :show, :search, :tag_search]
+  before_action :set_rank_recipe, only: [:index, :new, :create, :destroy, :edit, :update,
+    :show, :search, :ingredient_search, :season_search, :genre_search]
 
   def index
     @top_recipe = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(1).pluck(:recipe_id))
@@ -31,9 +32,19 @@ class RecipesController < ApplicationController
     @recipes = Recipe.search(params[:keyword])
   end
 
-  def tag_search
+  def ingredient_search
     @ingredient = DishIngredient.find(params[:id])
     @recipes = params[:id].present? ? DishIngredient.find(params[:id]).recipes : Recipe.all
+  end
+
+  def season_search
+    @season = Season.find(params[:id])
+    @recipes = params[:id].present? ? Season.find(params[:id]).recipes : Recipe.all
+  end
+
+  def genre_search
+    @genre = Genre.find(params[:id])
+    @recipes = params[:id].present? ? Genre.find(params[:id]).recipes : Recipe.all
   end
 
   def edit

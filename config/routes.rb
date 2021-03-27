@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       get 'search'
     end
     member do
-      get 'tag_search'
+      get 'ingredient_search'
+      get 'season_search'
+      get 'genre_search'
     end
   end
   
