@@ -5,18 +5,78 @@
 <%= render "shared/header"%>
   <div class="main">
     <div class="up-contents">
-      <div class="mein-content">
-        <h2 class="title">今日はこれを食っとけ</h2>
-      </div>
-      <div class="right-side">
-        <div class="best-menu">
-          <div class="best-title">人気のメニュー</div>
-          <ul class="best-ranking">
-            <li>1.</li>
-            <li>2.</li>
-            <li>3.</li>
-          </ul>
+      <div class="todays-recipe">
+        <div class="title-zone">
+          <h2 class="title">今日はこれを食っとけ</h2>
+          <%= link_to(recipe_path(@top_recipe), method: :get) do %>
+            <div class="recipe-link">レシピ詳細はこちら>></div>
+          <% end %>
         </div>
+        <% @top_recipe.each do | t | %>
+          <div class="up-zone">
+            <div class="today-recipe-img">
+              <div class="today-dish">
+                <%= t.dish_name %>
+              </div>
+              <%= image_tag t.image, class: "today-img" %>
+            </div>
+            <div class="today-ingredient">
+              <div class="catchcopy">
+                <%= t.catch_copy %>
+              </div>
+              <div class="ingredient-title">
+                <h3 class="seas">調味料</h3>
+                <h3 class="ingr">材料</h3>
+              </div>
+              <div class="in-ingredient">
+                <div class="recipe-seasoning">
+                  <% t.recipe_seasonings.each do |recipe|%>
+                    <div class="ingredient">
+                      <a><%= recipe.seasoning.name %></a>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="recipe-ingredient">
+                  <% t.recipe_ingredients.each do |recipe|%>
+                    <div class="seasoning">
+                      <%= recipe.dish_ingredient.name %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mid-zone">
+            <div class="step-title">
+              <h3>作り方</h3>
+            </div>
+            <div class="today-step">
+              <div class="step-box">
+                <li>1、<%= t.step_1 %></li>
+              </div>
+              <div class="step-box">
+                <li>2、<%= t.step_2 %></li>
+              </div>
+              <div class="step-box">
+                <li>3、<%= t.step_3 %></li>
+              </div>
+              <div class="step-box">
+                <li>4、<%= t.step_4 %></li>
+              </div>
+              <div class="step-box">
+                <li>5、<%= t.step_5 %></li>
+              </div>
+            </div>
+          </div>
+          <div class="buttom-zone">
+            <div class="today-cook">
+              <span>作: <%= t.user.user_name %></span>
+            </div>
+            <div class="today-like">
+            <span>いいね: <%= t.likes.count %></span>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="recipe-contents">

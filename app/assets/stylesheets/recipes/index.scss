@@ -1,86 +1,180 @@
-/*メイン*/
 .main {
   padding: 5vh 15vw 0;
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
   background-color: #f5f3f2;
-}
+  .up-contents {
+    display: flex;
+    justify-content: center;
+    .todays-recipe {
+      height: 80vh;
+      width: 100%;
+      background: #fffcf4;
+      border-radius :8px;
+      box-shadow :0px 0px 5px silver;
+      padding: 0.5em 0.5em 0.5em 2em;
+      .title-zone {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2vh;
+        .title {
+          width: 50%;
+          font-size: 3vw;
+          padding: 1vh 1rem;
+          color: #fff;
+          background: #094;
+          -webkit-box-shadow: 5px 5px 0 #007032;
+          box-shadow: 5px 5px 0 #007032;
+        }
+        .recipe-link {
+          margin-right: 2vw;
+          padding-top: 2vh;
+          color: rgb(122, 2, 2);
+        }
+      }
+      .up-zone {
+        display: flex;
+        height: 40vh;
+        margin-bottom: 3vh;
+        .today-recipe-img {
+          width: 50%;
+          height: 90%;
+          padding-top: 1vh;
+          margin-bottom: 1vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .today-dish {
+            height: 1.5vw;
+            width: 90%;
+            margin-bottom: 1vh;
+            font-size: 2vw;
+            padding: 8px;
+            background: #cde4ff;
+            border-bottom: solid 5px #5989cf;          }
+          .today-img {
+            max-height: 95%;
+            max-width: 80%;
+          }
+        }
+        .today-ingredient {
+          margin-top: 5vh;
+          .catchcopy {
+            margin-bottom: 2vh;
+            background-color: white;
+          }
+          .ingredient-title {
+            margin-bottom: 1vh;
+            display: flex;
+            justify-content: space-between;
+            h3 {
+              font-size: 2vh;
+              &.seas {
+              }
+              &.ingr {
+                margin-right: 12vw;
+              }
+            }
+          }
+          .in-ingredient {
+            height: 80%;
+            display: flex;
+            align-items: flex-start;
+            font-size: 2vh;
+            .recipe-seasoning {
+              margin-right: 3vw;
+            }
+            .recipe-seasoning, .recipe-ingredient {
+              width: 12vw;
+              height: 80%;
+              background: #fdefc8;
+              border-radius :8px;
+              box-shadow :0px 0px 5px silver;
+              padding: 0.5em 0.5em 0.5em 1em;
+              .seasoning, .ingredient {
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+      .mid-zone {
+        margin-bottom: 2vh;
+        .step-title {
+          font-size: 3vh;
+          margin-bottom: 2vh;
+        }
+        .today-step {
+          display: flex;
+          justify-content: space-between;
+          .step-box {
+            width: 9vw;
+            min-height: 17vh;
+            margin-right: 1vw;
+            background: #fcebba;
+            border-radius :8px;
+            box-shadow :0px 0px 5px silver;
+            padding: 0.5em 0.5em 0.5em 1em;
+            list-style: none;
+          }
+        }
+      }
+      .buttom-zone {
+        margin-right: 2vw;
+        display: flex;
+        justify-content: flex-end;
+        color: gray;
+        .today-cook {
+          margin-right: 1vw;
+        }
+        .today-like {
 
-/*上部コンテンツ*/
-.up-contents {
-  display: flex;
-  justify-content: center;
-}
-.mein-content {
-  height: 60vh;
-  width: 70%;
-  margin-right: 2vw;
-  background: #fffcf4;
-  border-radius :8px;
-  box-shadow :0px 0px 5px silver;
-  padding: 0.5em 0.5em 0.5em 2em;
-
-}
-.mein-content>.title {
-  margin-bottom: 10px;
-}
-
-/*右側サブコンテンツ*/
-.right-side {
-  width: 30%;
-  height: 300px;
-  background-color: antiquewhite;
-  border-radius :8px;
-  box-shadow :0px 0px 5px silver;
-  padding: 0.5em 0.5em 0.5em 2em;
-
-}
-.best-ranking {
-  list-style: none;
-  padding-left: 0;
-}
-
-/*レシピ一覧表示部分*/
-.recipe-contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
-}
-.recipe-contents>.title {
-  font-size: 3vh;
-  margin-bottom: 2vh;
-}
-.recipe-lists {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #fffcf4;
-  border-radius :8px;
-  box-shadow :0px 0px 5px silver;
-  padding: 0.5em 0.5em 0.5em 2em;
-}
-.lists {
-  width: 20vh;
-  padding: 1vw;
-  list-style: none;
-}
-.recipe-img-content {
-  position: relative;
-}
-.recipe-img {
-  width: 20vw;
-  height: 24vh;
-}
-.recipe-info {
-  display: flex;
-  flex-direction: column;
-}
-.recipe-name {
-  font-size: 2vh;
-}
-.user-name{
-  font-size: 1vh;
+        }
+      }
+    }
+  }
+  .recipe-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0;
+    .title {
+      font-size: 3vh;
+      margin-bottom: 2vh;
+    }
+    .recipe-lists {
+      width: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #fffcf4;
+      border-radius :8px;
+      box-shadow :0px 0px 5px silver;
+      padding: 0.5em 0.5em 0.5em 2em;
+      .lists {
+        width: 25vh;
+        padding: 1vw;
+        list-style: none;
+        .recipe-img-content {
+          display: flex;
+          justify-content: center;
+          .recipe-img {
+            height: 24vh;
+          }
+        }
+        .recipe-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .recipe-name {
+            font-size: 2vh;
+          }
+          .user-name{
+            font-size: 1vh;
+          }
+        }
+      }
+    }
+  }
 }
