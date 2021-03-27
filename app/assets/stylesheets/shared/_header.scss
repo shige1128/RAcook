@@ -3,7 +3,7 @@
   padding: 1vh 15vw;
   display: flex;
   flex-direction: column;
-  background-color: #a7d28f;
+  background-color: #f5f3f2;
 }
 .top-header {
   display: flex;
@@ -47,12 +47,12 @@
 }
 .up-button {
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 1vw;
   text-decoration: none;
 }
 .down-button {
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 1vw;
   text-decoration: none;
 }
 
@@ -64,7 +64,7 @@
 }
 .category {
   width: 60vw;
-  height: 3vh;
+  height: 4vh;
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -82,7 +82,7 @@
 }
 .post-button {
   padding: 10px;
-  font-size: 15px;
+  font-size: 1vw;
   color: brown;
   background-color: orange;
   border: solid 1px;
