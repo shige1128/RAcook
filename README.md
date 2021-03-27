@@ -17,8 +17,8 @@
 ## URL
 https://racook-1128.herokuapp.com/
 ## Basic認証
-- ユーザー名
-- 
+- ユーザー名:admin
+- パスワード:2222
 ## テスト用アカウント
 - メールアドレス:a@a.com
 - パスワード:aaaaaa1
