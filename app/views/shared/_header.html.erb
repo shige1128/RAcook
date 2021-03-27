@@ -54,11 +54,11 @@
       <div class="dropdown-button-2" id="dropdown-btn-4"><a class="arrow_u" id="arrow-4">ランキング</a>
         <div class="dropdown-body hidden" id="drop-down-4">
           <% @rank_recipe.each.with_index(1) do |recipe, i| %>
-            <%= link_to recipe_path(recipe), method: :get do %>
-              <li class="rank-list">
-                <a>No.<%= i %><%= recipe.dish_name %></a>
-              </li>
-            <% end %>
+            <li class="rank-list">
+              <%= link_to recipe_path(recipe.id) do %>
+                No.<%= i %><%= recipe.dish_name %>
+              <% end %>
+            </li>
           <% end %>
         </div>
       </div>
