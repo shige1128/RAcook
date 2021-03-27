@@ -6,13 +6,13 @@
   <div class="main">
     <div class="up-contents">
       <div class="todays-recipe">
-        <div class="title-zone">
-          <h2 class="title">今日はこれを食っとけ</h2>
-          <%= link_to recipe_path(@top_recipe) do %>
-            <div class="recipe-link">レシピ詳細はこちら>></div>
-          <% end %>
-        </div>
         <% @top_recipe.each do | t | %>
+          <div class="title-zone">
+            <h2 class="title">今日はこれを食っとけ</h2>
+            <%= link_to recipe_path(t.id) do %>
+              <div class="recipe-link">レシピ詳細はこちら>></div>
+            <% end %>
+          </div>
           <div class="up-zone">
             <div class="today-recipe-img">
               <div class="today-dish">
