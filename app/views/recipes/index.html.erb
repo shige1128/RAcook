@@ -8,7 +8,7 @@
       <div class="todays-recipe">
         <div class="title-zone">
           <h2 class="title">今日はこれを食っとけ</h2>
-          <%= link_to(recipe_path(@top_recipe), method: :get) do %>
+          <%= link_to recipe_path(@top_recipe) do %>
             <div class="recipe-link">レシピ詳細はこちら>></div>
           <% end %>
         </div>
