@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
     :show, :search, :ingredient_search, :season_search, :genre_search]
 
   def index
-    @top_recipe = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(1).pluck(:recipe_id))
+    @top_recipes = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(1).pluck(:recipe_id))
     @recipe = Recipe.all
   end
 
@@ -80,6 +80,6 @@ class RecipesController < ApplicationController
   end
 
   def set_rank_recipe
-    @rank_recipe = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(5).pluck(:recipe_id))
+    @rank_recipes = Recipe.find(Like.group(:recipe_id).order('count(recipe_id) desc').limit(5).pluck(:recipe_id))
   end
 end
