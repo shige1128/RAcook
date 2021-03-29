@@ -53,7 +53,7 @@
       </div>
       <div class="dropdown-button-2" id="dropdown-btn-4"><a class="arrow_u" id="arrow-4">ランキング</a>
         <div class="dropdown-body hidden" id="drop-down-4">
-          <%= @rank_recipes.each.with_index(1) do |recipe, i| %>
+          <% @rank_recipes.each.with_index(1) do |recipe, i| %>
             <li class="rank-list">
               <%= link_to recipe_path(recipe.id) do %>
                 No.<%= i %><%= recipe.dish_name %>
