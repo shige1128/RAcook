@@ -5,8 +5,8 @@
 <%= render "shared/header"%>
   <div class="main">
     <div class="up-contents">
-        <% @top_recipe.each do | t | %>
       <div class="todays-recipe">
+        <%= @top_recipe.each do | t | %>
           <div class="title-zone">
             <h2 class="title">今日はこれを食っとけ</h2>
             <%= link_to recipe_path(t.id) do %>
@@ -76,8 +76,8 @@
             <span>いいね: <%= t.likes.count %></span>
             </div>
           </div>
-      </div>
         <% end %>
+      </div>
     </div>
     <div class="recipe-contents">
       <h2 class="title">レシピ一覧</h2>
