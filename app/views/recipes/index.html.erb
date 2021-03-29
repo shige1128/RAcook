@@ -6,7 +6,7 @@
   <div class="main">
     <div class="up-contents">
       <div class="todays-recipe">
-        <%= @top_recipe.each do | t | %>
+        <% @top_recipes.each do |t| %>
           <div class="title-zone">
             <h2 class="title">今日はこれを食っとけ</h2>
             <%= link_to recipe_path(t.id) do %>
