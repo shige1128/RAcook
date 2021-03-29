@@ -51,3 +51,4 @@ https://racook-1128.herokuapp.com/
 - Visual Studio Code
 - Heroku
 - Trello
+- AWS S3
