@@ -116,7 +116,7 @@
           </div>
           <div class="check-box season">
             <%= f.collection_radio_buttons(:season_id, Season.all, :id, :name, {}) do |s| %>
-              <div class="short"><%= s.radio_button + s.label %></div>
+              <div class="short-1"><%= s.radio_button + s.label %></div>
             <% end %>
           </div>
         </div>
@@ -126,7 +126,7 @@
           </div>
           <div class="check-box season">
             <%= f.collection_radio_buttons(:genre_id, Genre.all, :id, :name, {}) do |s| %>
-              <div class="short"><%= s.radio_button + s.label %></div>
+              <div class="short-2"><%= s.radio_button + s.label %></div>
             <% end %>
           </div>
         </div>
