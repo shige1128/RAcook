@@ -88,7 +88,7 @@ p {
   background-color: white;
 }
 .season {
-  width: 70%;
+  width: 15vw;
   margin-top: 5px;
   display: flex;
 }
@@ -98,9 +98,11 @@ fieldset {
   margin: 5px;
   display: inline-block;
 }
-.short {
-  margin: 5px;
-  display: flex;
+.short-1>label {
+  width: 10px;
+}
+.short-2>label {
+  width: 35px;
 }
 .tag-select {
   width: 50vw;
