@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% if current_user.liked_by?(recipe.id) %>
     <div class="unlike-button">
-      <%= link_to('いいね', destroy_like_path(recipe), method: :DELETE, class: "likebtn", remote: true) %>
+      <%= link_to 'いいね', destroy_like_path(recipe), method: :DELETE, class: "likebtn", remote: true %>
     </div>
     <p><%= recipe.likes.count %></p>
   <% else %>
@@ -12,6 +12,6 @@
   <% end %>
 <% else %>
   <div class="like-count">いいね
-    <p><%= recipe.likes.count %></p>
+    <label><%= recipe.likes.count %></label>
   </div>
 <% end %>
