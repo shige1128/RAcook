@@ -186,6 +186,7 @@ h2 {
           list-style: none;
           li {
             margin: 10px 0;
+            font-size: 1vw;
           }
           p {
             margin: 1vh;
@@ -193,7 +194,7 @@ h2 {
           }
           .comment-user, .comment-date{
             color: dimgray;
-            font-size: 15px;
+            font-size: 10px;
           }
         }
         .comment-form {
