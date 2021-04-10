@@ -34,7 +34,7 @@
         <div class="form-text-wrap">
           <label class="form-text">キャッチコピー</label>
         </div>
-        <%= f.text_field :catch_copy, class:"input-text", id:"catch_copy", placeholder:"このレシピの説明やメッセージを入力" %>
+        <%= f.text_area :catch_copy, class:"input-text", id:"catch_copy", placeholder:"このレシピの説明やメッセージを入力" %>
         <p class="info-text">100文字まで</p>
       </div>
       <div class="form-group">
@@ -76,37 +76,37 @@
           <label class="form-text">手順１</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :step_1, class:"input-text", placeholder:"例)材料を水で洗ったら、〇〇を一口大に切り耐熱皿に入れてレンジで3分加熱する", id:"step_1",  maxlength:"100" %>
+        <%= f.text_area :step_1, class:"input-text", placeholder:"例)材料を水で洗ったら、〇〇を一口大に切り耐熱皿に入れてレンジで3分加熱する", id:"step_1",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順２</label>
         </div>
-        <%= f.text_field :step_2, class:"input-text", id:"step_2",  maxlength:"100" %>
+        <%= f.text_area :step_2, class:"input-text", id:"step_2",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順３</label>
         </div>
-        <%= f.text_field :step_3, class:"input-text", id:"step_3",  maxlength:"100" %>
+        <%= f.text_area :step_3, class:"input-text", id:"step_3",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順４</label>
         </div>
-        <%= f.text_field :step_4, class:"input-text", id:"step_4",  maxlength:"100" %>
+        <%= f.text_area :step_4, class:"input-text", id:"step_4",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">手順５</label>
         </div>
-        <%= f.text_field :step_5, class:"input-text", id:"step_5",  maxlength:"100" %>
+        <%= f.text_area :step_5, class:"input-text", id:"step_5",  maxlength:"100" %>
       </div>
       <div class="form-group">
         <div class="form-text-wrap">
           <label class="form-text">コツ、ワンポイントアドバイス</label>
         </div>
-        <%= f.text_field :dish_point, class:"input-default", id:"dish_point" %>
+        <%= f.text_area :dish_point, class:"input-default", id:"dish_point" %>
         <p class="info-text">100文字まで</p>
       </div>
       <div class="tag-select">
